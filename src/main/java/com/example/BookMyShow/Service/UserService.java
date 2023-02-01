@@ -1,6 +1,6 @@
 package com.example.BookMyShow.Service;
 
-import com.example.BookMyShow.Dtos.UserRequestDto;
+import com.example.BookMyShow.RequestDtos.UserRequestDto;
 import com.example.BookMyShow.Models.UserEntity;
 import com.example.BookMyShow.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

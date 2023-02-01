@@ -1,11 +1,12 @@
 package com.example.BookMyShow.Service;
 
-import com.example.BookMyShow.Dtos.TheaterRequestDto;
+import com.example.BookMyShow.RequestDtos.TheaterRequestDto;
 import com.example.BookMyShow.Enums.SeatType;
 import com.example.BookMyShow.Models.TheaterEntity;
 import com.example.BookMyShow.Models.TheaterSeatEntity;
 import com.example.BookMyShow.Repository.TheaterRepository;
 import com.example.BookMyShow.Repository.TheaterSeatRepository;
+import com.example.BookMyShow.ResponseDto.TheaterResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -96,12 +97,23 @@ public class TheaterService {
         return seats;
     }
 
-    public TheaterEntity getTheaterById(Integer theaterId){
-        return theaterRepository.findById(theaterId).get();
+    public TheaterResponse getTheaterById(Integer theaterId){
+        TheaterEntity theaterEntity = theaterRepository.findById(theaterId).get();
+        TheaterResponse theaterResponse = TheaterResponse.builder().id(theaterEntity.getId()).name(theaterEntity.getName())
+                .city(theaterEntity.getCity()).address(theaterEntity.getAddress()).build();
+        return theaterResponse;
     }
 
-    public List<TheaterEntity> getAllTheaters(){
+    public List<TheaterResponse> getAllTheaters(){
         List<TheaterEntity> listOfTheaters = theaterRepository.findAll();
-        return listOfTheaters;
+        List<TheaterResponse> allTheaters = new ArrayList<>();
+
+        for(TheaterEntity theaterEntity : listOfTheaters){
+            TheaterResponse theaterResponse = TheaterResponse.builder().id(theaterEntity.getId()).name(theaterEntity.getName())
+                    .city(theaterEntity.getCity()).address(theaterEntity.getAddress()).build();
+
+            allTheaters.add(theaterResponse);
+        }
+        return allTheaters;
     }
 }

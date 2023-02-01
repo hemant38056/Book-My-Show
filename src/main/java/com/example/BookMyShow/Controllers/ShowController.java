@@ -1,6 +1,6 @@
 package com.example.BookMyShow.Controllers;
 
-import com.example.BookMyShow.Dtos.ShowRequestDto;
+import com.example.BookMyShow.RequestDtos.ShowRequestDto;
 import com.example.BookMyShow.Service.ShowService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

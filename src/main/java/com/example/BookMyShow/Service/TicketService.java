@@ -1,6 +1,6 @@
 package com.example.BookMyShow.Service;
 
-import com.example.BookMyShow.Dtos.BookTicketRequestDto;
+import com.example.BookMyShow.RequestDtos.BookTicketRequestDto;
 import com.example.BookMyShow.Models.ShowEntity;
 import com.example.BookMyShow.Models.ShowSeatEntity;
 import com.example.BookMyShow.Models.TicketEntity;
@@ -8,7 +8,6 @@ import com.example.BookMyShow.Models.UserEntity;
 import com.example.BookMyShow.Repository.ShowRepository;
 import com.example.BookMyShow.Repository.TicketRepository;
 import com.example.BookMyShow.Repository.UserRepository;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,8 @@
 package com.example.BookMyShow.Controllers;
 
-import com.example.BookMyShow.Dtos.MovieRequestDto;
+import com.example.BookMyShow.RequestDtos.MovieRequestDto;
 import com.example.BookMyShow.Models.MovieEntity;
+import com.example.BookMyShow.ResponseDto.MovieResponse;
 import com.example.BookMyShow.Service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,8 @@ public class MovieController {
     //Get movie By name
 
     @GetMapping("/getMovie")
-    public MovieEntity getMovieByName(@RequestParam("name") String name){
+    public MovieResponse getMovieByName(@RequestParam("name") String name){
+
         return movieService.getMovieByName(name);
     }
 }

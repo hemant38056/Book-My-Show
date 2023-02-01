@@ -1,6 +1,6 @@
 package com.example.BookMyShow.Service;
 
-import com.example.BookMyShow.Dtos.ShowRequestDto;
+import com.example.BookMyShow.RequestDtos.ShowRequestDto;
 import com.example.BookMyShow.Models.*;
 import com.example.BookMyShow.Repository.MovieRepository;
 import com.example.BookMyShow.Repository.ShowRepository;
